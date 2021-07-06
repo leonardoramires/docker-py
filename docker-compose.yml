@@ -25,15 +25,15 @@ services:
             - "PGADMIN_DEFAULT_EMAIL=leoframires@gmail.com"
             - "PGADMIN_DEFAULT_PASSWORD=1234"
         ports: 
-            - "80:80"
+            - "1234:80"
         expose:
-            - "80"
+            - "1234"
         volumes: 
             - ./pgadmin:/var/lib/pgadmin
         networks: 
             - local-network
         depends_on: 
-            - "postgres-db"
+            - postgres-db
     python-env:
         build:
             dockerfile: ./.
@@ -44,8 +44,8 @@ services:
         networks: 
             - local-network
         depends_on: 
-            - "pgadmin-db"
-            - "postgres-db"
+            - pgadmin-db
+            - postgres-db
 networks: 
     local-network:
         driver: bridge
