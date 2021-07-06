@@ -1,5 +1,4 @@
 pandas
 SQLAlchemy
-mysqlclient
 psycopg2
 psycopg2-binary
